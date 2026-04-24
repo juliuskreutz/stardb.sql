@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict AF0eik2CpwagqoAnbZM8mHrylKRhwpXd6iSnCVTSR8HUmJkieiAhUmjZvV4XTbc
+\restrict zfDMUsTg7SpKfrniQZ8wfGWCR7kTG8A4IuvdjV47irPp8MJe0ES44gfROdQXvUz
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
@@ -385,51 +385,24 @@ ALTER TABLE hsr.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: banner_characters; Type: TABLE; Schema: hsr; Owner: julius
+-- Name: banner_items; Type: TABLE; Schema: hsr; Owner: julius
 --
 
-CREATE TABLE hsr.banner_characters (
+CREATE TABLE hsr.banner_items (
     id integer NOT NULL,
     banner integer NOT NULL,
-    "character" integer NOT NULL
+    item integer NOT NULL
 );
 
 
-ALTER TABLE hsr.banner_characters OWNER TO julius;
+ALTER TABLE hsr.banner_items OWNER TO julius;
 
 --
--- Name: banner_characters_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+-- Name: banner_items_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
 --
 
-ALTER TABLE hsr.banner_characters ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME hsr.banner_characters_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1
-);
-
-
---
--- Name: banner_weapons; Type: TABLE; Schema: hsr; Owner: julius
---
-
-CREATE TABLE hsr.banner_weapons (
-    id integer NOT NULL,
-    banner integer NOT NULL,
-    weapon integer NOT NULL
-);
-
-
-ALTER TABLE hsr.banner_weapons OWNER TO julius;
-
---
--- Name: banner_weapons_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
---
-
-ALTER TABLE hsr.banner_weapons ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
-    SEQUENCE NAME hsr.banner_weapons_id_seq
+ALTER TABLE hsr.banner_items ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.banner_items_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -489,6 +462,62 @@ ALTER TABLE hsr.gachas OWNER TO julius;
 
 ALTER TABLE hsr.gachas ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
     SEQUENCE NAME hsr.gachas_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: item_texts; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.item_texts (
+    id integer NOT NULL,
+    lang public.lang NOT NULL,
+    item integer NOT NULL,
+    name text NOT NULL
+);
+
+
+ALTER TABLE hsr.item_texts OWNER TO julius;
+
+--
+-- Name: item_texts_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.item_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.item_texts_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: items; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.items (
+    id integer NOT NULL,
+    extern_id text NOT NULL,
+    type text NOT NULL,
+    rarity integer NOT NULL
+);
+
+
+ALTER TABLE hsr.items OWNER TO julius;
+
+--
+-- Name: items_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.items ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.items_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -782,19 +811,11 @@ ALTER TABLE ONLY hsr.achievements
 
 
 --
--- Name: banner_characters banner_characters_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+-- Name: banner_items banner_items_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
-ALTER TABLE ONLY hsr.banner_characters
-    ADD CONSTRAINT banner_characters_pkey PRIMARY KEY (id);
-
-
---
--- Name: banner_weapons banner_weapons_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
---
-
-ALTER TABLE ONLY hsr.banner_weapons
-    ADD CONSTRAINT banner_weapons_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY hsr.banner_items
+    ADD CONSTRAINT banner_items_pkey PRIMARY KEY (id);
 
 
 --
@@ -819,6 +840,30 @@ ALTER TABLE ONLY hsr.gachas
 
 ALTER TABLE ONLY hsr.gachas
     ADD CONSTRAINT gachas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: item_texts item_texts_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.item_texts
+    ADD CONSTRAINT item_texts_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: items items_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.items
+    ADD CONSTRAINT items_extern_id_key UNIQUE (extern_id);
+
+
+--
+-- Name: items items_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.items
+    ADD CONSTRAINT items_pkey PRIMARY KEY (id);
 
 
 --
@@ -956,17 +1001,10 @@ CREATE INDEX achievements_extern_id_idx ON hsr.achievements USING btree (extern_
 
 
 --
--- Name: banner_characters_banner_idx; Type: INDEX; Schema: hsr; Owner: julius
+-- Name: banner_items_banner_idx; Type: INDEX; Schema: hsr; Owner: julius
 --
 
-CREATE INDEX banner_characters_banner_idx ON hsr.banner_characters USING btree (banner);
-
-
---
--- Name: banner_weapons_banner_idx; Type: INDEX; Schema: hsr; Owner: julius
---
-
-CREATE INDEX banner_weapons_banner_idx ON hsr.banner_weapons USING btree (banner);
+CREATE INDEX banner_items_banner_idx ON hsr.banner_items USING btree (banner);
 
 
 --
@@ -1082,19 +1120,19 @@ ALTER TABLE ONLY hsr.achievements
 
 
 --
--- Name: banner_characters banner_characters_banner_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+-- Name: banner_items banner_items_banner_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
-ALTER TABLE ONLY hsr.banner_characters
-    ADD CONSTRAINT banner_characters_banner_fkey FOREIGN KEY (banner) REFERENCES hsr.banners(id);
+ALTER TABLE ONLY hsr.banner_items
+    ADD CONSTRAINT banner_items_banner_fkey FOREIGN KEY (banner) REFERENCES hsr.banners(id);
 
 
 --
--- Name: banner_weapons banner_weapons_banner_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+-- Name: banner_items banner_items_item_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
-ALTER TABLE ONLY hsr.banner_weapons
-    ADD CONSTRAINT banner_weapons_banner_fkey FOREIGN KEY (banner) REFERENCES hsr.banners(id);
+ALTER TABLE ONLY hsr.banner_items
+    ADD CONSTRAINT banner_items_item_fkey FOREIGN KEY (item) REFERENCES hsr.items(id);
 
 
 --
@@ -1106,11 +1144,27 @@ ALTER TABLE ONLY hsr.banners
 
 
 --
+-- Name: item_texts item_texts_item_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.item_texts
+    ADD CONSTRAINT item_texts_item_fkey FOREIGN KEY (item) REFERENCES hsr.items(id);
+
+
+--
 -- Name: pulls pulls_gacha_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.pulls
     ADD CONSTRAINT pulls_gacha_fkey FOREIGN KEY (gacha) REFERENCES hsr.gachas(id);
+
+
+--
+-- Name: pulls pulls_item_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.pulls
+    ADD CONSTRAINT pulls_item_fkey FOREIGN KEY (item) REFERENCES hsr.items(id);
 
 
 --
@@ -1141,5 +1195,5 @@ ALTER TABLE ONLY nte.achievements
 -- PostgreSQL database dump complete
 --
 
-\unrestrict AF0eik2CpwagqoAnbZM8mHrylKRhwpXd6iSnCVTSR8HUmJkieiAhUmjZvV4XTbc
+\unrestrict zfDMUsTg7SpKfrniQZ8wfGWCR7kTG8A4IuvdjV47irPp8MJe0ES44gfROdQXvUz
 
