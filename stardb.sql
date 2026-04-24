@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict poWt5RcU4c0ekHjTsatuai3SUE6lqx1iN15cSZDPSQ3i56AP5EyMqI0qQ2NOtHv
+\restrict AF0eik2CpwagqoAnbZM8mHrylKRhwpXd6iSnCVTSR8HUmJkieiAhUmjZvV4XTbc
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
@@ -498,6 +498,37 @@ ALTER TABLE hsr.gachas ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
+-- Name: pulls; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.pulls (
+    id integer NOT NULL,
+    extern_id text NOT NULL,
+    gacha integer NOT NULL,
+    uid integer NOT NULL,
+    item integer NOT NULL,
+    "time" timestamp with time zone NOT NULL,
+    official boolean NOT NULL
+);
+
+
+ALTER TABLE hsr.pulls OWNER TO julius;
+
+--
+-- Name: pulls_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.pulls ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.pulls_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
 -- Name: achievement_categories; Type: TABLE; Schema: nte; Owner: julius
 --
 
@@ -791,6 +822,14 @@ ALTER TABLE ONLY hsr.gachas
 
 
 --
+-- Name: pulls pulls_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.pulls
+    ADD CONSTRAINT pulls_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
@@ -917,6 +956,48 @@ CREATE INDEX achievements_extern_id_idx ON hsr.achievements USING btree (extern_
 
 
 --
+-- Name: banner_characters_banner_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banner_characters_banner_idx ON hsr.banner_characters USING btree (banner);
+
+
+--
+-- Name: banner_weapons_banner_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banner_weapons_banner_idx ON hsr.banner_weapons USING btree (banner);
+
+
+--
+-- Name: banners_gacha_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banners_gacha_idx ON hsr.banners USING btree (gacha);
+
+
+--
+-- Name: banners_range_cn_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banners_range_cn_idx ON hsr.banners USING gist (tstzrange(start_cn, end_cn));
+
+
+--
+-- Name: banners_range_eu_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banners_range_eu_idx ON hsr.banners USING gist (tstzrange(start_eu, end_eu));
+
+
+--
+-- Name: banners_range_na_idx; Type: INDEX; Schema: hsr; Owner: julius
+--
+
+CREATE INDEX banners_range_na_idx ON hsr.banners USING gist (tstzrange(start_na, end_na));
+
+
+--
 -- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: nte; Owner: julius
 --
 
@@ -1025,6 +1106,14 @@ ALTER TABLE ONLY hsr.banners
 
 
 --
+-- Name: pulls pulls_gacha_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.pulls
+    ADD CONSTRAINT pulls_gacha_fkey FOREIGN KEY (gacha) REFERENCES hsr.gachas(id);
+
+
+--
 -- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: julius
 --
 
@@ -1052,5 +1141,5 @@ ALTER TABLE ONLY nte.achievements
 -- PostgreSQL database dump complete
 --
 
-\unrestrict poWt5RcU4c0ekHjTsatuai3SUE6lqx1iN15cSZDPSQ3i56AP5EyMqI0qQ2NOtHv
+\unrestrict AF0eik2CpwagqoAnbZM8mHrylKRhwpXd6iSnCVTSR8HUmJkieiAhUmjZvV4XTbc
 
