@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict IcUCouRg4hbAMJxT8hfDGESvNbm8O0TsgF4scJP8XptcOFGK1sLiG7OEAhCyhcA
+\restrict poWt5RcU4c0ekHjTsatuai3SUE6lqx1iN15cSZDPSQ3i56AP5EyMqI0qQ2NOtHv
 
 -- Dumped from database version 18.3
 -- Dumped by pg_dump version 18.3
@@ -20,43 +20,43 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: auth; Type: SCHEMA; Schema: -; Owner: root
+-- Name: auth; Type: SCHEMA; Schema: -; Owner: julius
 --
 
 CREATE SCHEMA auth;
 
 
-ALTER SCHEMA auth OWNER TO root;
+ALTER SCHEMA auth OWNER TO julius;
 
 --
--- Name: gi; Type: SCHEMA; Schema: -; Owner: root
+-- Name: gi; Type: SCHEMA; Schema: -; Owner: julius
 --
 
 CREATE SCHEMA gi;
 
 
-ALTER SCHEMA gi OWNER TO root;
+ALTER SCHEMA gi OWNER TO julius;
 
 --
--- Name: hsr; Type: SCHEMA; Schema: -; Owner: root
+-- Name: hsr; Type: SCHEMA; Schema: -; Owner: julius
 --
 
 CREATE SCHEMA hsr;
 
 
-ALTER SCHEMA hsr OWNER TO root;
+ALTER SCHEMA hsr OWNER TO julius;
 
 --
--- Name: nte; Type: SCHEMA; Schema: -; Owner: root
+-- Name: nte; Type: SCHEMA; Schema: -; Owner: julius
 --
 
 CREATE SCHEMA nte;
 
 
-ALTER SCHEMA nte OWNER TO root;
+ALTER SCHEMA nte OWNER TO julius;
 
 --
--- Name: difficulty; Type: TYPE; Schema: public; Owner: root
+-- Name: difficulty; Type: TYPE; Schema: public; Owner: julius
 --
 
 CREATE TYPE public.difficulty AS ENUM (
@@ -66,10 +66,10 @@ CREATE TYPE public.difficulty AS ENUM (
 );
 
 
-ALTER TYPE public.difficulty OWNER TO root;
+ALTER TYPE public.difficulty OWNER TO julius;
 
 --
--- Name: lang; Type: TYPE; Schema: public; Owner: root
+-- Name: lang; Type: TYPE; Schema: public; Owner: julius
 --
 
 CREATE TYPE public.lang AS ENUM (
@@ -89,14 +89,14 @@ CREATE TYPE public.lang AS ENUM (
 );
 
 
-ALTER TYPE public.lang OWNER TO root;
+ALTER TYPE public.lang OWNER TO julius;
 
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
--- Name: admins; Type: TABLE; Schema: auth; Owner: root
+-- Name: admins; Type: TABLE; Schema: auth; Owner: julius
 --
 
 CREATE TABLE auth.admins (
@@ -104,10 +104,10 @@ CREATE TABLE auth.admins (
 );
 
 
-ALTER TABLE auth.admins OWNER TO root;
+ALTER TABLE auth.admins OWNER TO julius;
 
 --
--- Name: users; Type: TABLE; Schema: auth; Owner: root
+-- Name: users; Type: TABLE; Schema: auth; Owner: julius
 --
 
 CREATE TABLE auth.users (
@@ -118,10 +118,10 @@ CREATE TABLE auth.users (
 );
 
 
-ALTER TABLE auth.users OWNER TO root;
+ALTER TABLE auth.users OWNER TO julius;
 
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: auth; Owner: root
+-- Name: users_id_seq; Type: SEQUENCE; Schema: auth; Owner: julius
 --
 
 ALTER TABLE auth.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -135,7 +135,7 @@ ALTER TABLE auth.users ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: achievement_categories; Type: TABLE; Schema: gi; Owner: root
+-- Name: achievement_categories; Type: TABLE; Schema: gi; Owner: julius
 --
 
 CREATE TABLE gi.achievement_categories (
@@ -145,10 +145,10 @@ CREATE TABLE gi.achievement_categories (
 );
 
 
-ALTER TABLE gi.achievement_categories OWNER TO root;
+ALTER TABLE gi.achievement_categories OWNER TO julius;
 
 --
--- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: gi; Owner: root
+-- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: gi; Owner: julius
 --
 
 ALTER TABLE gi.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -162,7 +162,7 @@ ALTER TABLE gi.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS ID
 
 
 --
--- Name: achievement_category_texts; Type: TABLE; Schema: gi; Owner: root
+-- Name: achievement_category_texts; Type: TABLE; Schema: gi; Owner: julius
 --
 
 CREATE TABLE gi.achievement_category_texts (
@@ -173,10 +173,10 @@ CREATE TABLE gi.achievement_category_texts (
 );
 
 
-ALTER TABLE gi.achievement_category_texts OWNER TO root;
+ALTER TABLE gi.achievement_category_texts OWNER TO julius;
 
 --
--- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: gi; Owner: root
+-- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: gi; Owner: julius
 --
 
 ALTER TABLE gi.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -190,7 +190,7 @@ ALTER TABLE gi.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS A
 
 
 --
--- Name: achievement_texts; Type: TABLE; Schema: gi; Owner: root
+-- Name: achievement_texts; Type: TABLE; Schema: gi; Owner: julius
 --
 
 CREATE TABLE gi.achievement_texts (
@@ -202,10 +202,10 @@ CREATE TABLE gi.achievement_texts (
 );
 
 
-ALTER TABLE gi.achievement_texts OWNER TO root;
+ALTER TABLE gi.achievement_texts OWNER TO julius;
 
 --
--- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: gi; Owner: root
+-- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: gi; Owner: julius
 --
 
 ALTER TABLE gi.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -219,7 +219,7 @@ ALTER TABLE gi.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTIT
 
 
 --
--- Name: achievements; Type: TABLE; Schema: gi; Owner: root
+-- Name: achievements; Type: TABLE; Schema: gi; Owner: julius
 --
 
 CREATE TABLE gi.achievements (
@@ -243,10 +243,10 @@ CREATE TABLE gi.achievements (
 );
 
 
-ALTER TABLE gi.achievements OWNER TO root;
+ALTER TABLE gi.achievements OWNER TO julius;
 
 --
--- Name: achievements_id_seq; Type: SEQUENCE; Schema: gi; Owner: root
+-- Name: achievements_id_seq; Type: SEQUENCE; Schema: gi; Owner: julius
 --
 
 ALTER TABLE gi.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -260,7 +260,7 @@ ALTER TABLE gi.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: achievement_categories; Type: TABLE; Schema: hsr; Owner: root
+-- Name: achievement_categories; Type: TABLE; Schema: hsr; Owner: julius
 --
 
 CREATE TABLE hsr.achievement_categories (
@@ -270,10 +270,10 @@ CREATE TABLE hsr.achievement_categories (
 );
 
 
-ALTER TABLE hsr.achievement_categories OWNER TO root;
+ALTER TABLE hsr.achievement_categories OWNER TO julius;
 
 --
--- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: hsr; Owner: root
+-- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE hsr.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -287,7 +287,7 @@ ALTER TABLE hsr.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS I
 
 
 --
--- Name: achievement_category_texts; Type: TABLE; Schema: hsr; Owner: root
+-- Name: achievement_category_texts; Type: TABLE; Schema: hsr; Owner: julius
 --
 
 CREATE TABLE hsr.achievement_category_texts (
@@ -298,10 +298,10 @@ CREATE TABLE hsr.achievement_category_texts (
 );
 
 
-ALTER TABLE hsr.achievement_category_texts OWNER TO root;
+ALTER TABLE hsr.achievement_category_texts OWNER TO julius;
 
 --
--- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: hsr; Owner: root
+-- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE hsr.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -315,7 +315,7 @@ ALTER TABLE hsr.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS 
 
 
 --
--- Name: achievement_texts; Type: TABLE; Schema: hsr; Owner: root
+-- Name: achievement_texts; Type: TABLE; Schema: hsr; Owner: julius
 --
 
 CREATE TABLE hsr.achievement_texts (
@@ -327,10 +327,10 @@ CREATE TABLE hsr.achievement_texts (
 );
 
 
-ALTER TABLE hsr.achievement_texts OWNER TO root;
+ALTER TABLE hsr.achievement_texts OWNER TO julius;
 
 --
--- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: hsr; Owner: root
+-- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE hsr.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -344,7 +344,7 @@ ALTER TABLE hsr.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTI
 
 
 --
--- Name: achievements; Type: TABLE; Schema: hsr; Owner: root
+-- Name: achievements; Type: TABLE; Schema: hsr; Owner: julius
 --
 
 CREATE TABLE hsr.achievements (
@@ -368,10 +368,10 @@ CREATE TABLE hsr.achievements (
 );
 
 
-ALTER TABLE hsr.achievements OWNER TO root;
+ALTER TABLE hsr.achievements OWNER TO julius;
 
 --
--- Name: achievements_id_seq; Type: SEQUENCE; Schema: hsr; Owner: root
+-- Name: achievements_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE hsr.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -385,7 +385,120 @@ ALTER TABLE hsr.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: achievement_categories; Type: TABLE; Schema: nte; Owner: root
+-- Name: banner_characters; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.banner_characters (
+    id integer NOT NULL,
+    banner integer NOT NULL,
+    "character" integer NOT NULL
+);
+
+
+ALTER TABLE hsr.banner_characters OWNER TO julius;
+
+--
+-- Name: banner_characters_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.banner_characters ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.banner_characters_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: banner_weapons; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.banner_weapons (
+    id integer NOT NULL,
+    banner integer NOT NULL,
+    weapon integer NOT NULL
+);
+
+
+ALTER TABLE hsr.banner_weapons OWNER TO julius;
+
+--
+-- Name: banner_weapons_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.banner_weapons ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.banner_weapons_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: banners; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.banners (
+    id integer NOT NULL,
+    gacha integer NOT NULL,
+    start_cn timestamp with time zone,
+    start_eu timestamp with time zone,
+    start_na timestamp with time zone,
+    end_cn timestamp with time zone,
+    end_eu timestamp with time zone,
+    end_na timestamp with time zone
+);
+
+
+ALTER TABLE hsr.banners OWNER TO julius;
+
+--
+-- Name: banners_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.banners ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.banners_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: gachas; Type: TABLE; Schema: hsr; Owner: julius
+--
+
+CREATE TABLE hsr.gachas (
+    id integer NOT NULL,
+    extern_id text NOT NULL,
+    show boolean NOT NULL
+);
+
+
+ALTER TABLE hsr.gachas OWNER TO julius;
+
+--
+-- Name: gachas_id_seq; Type: SEQUENCE; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE hsr.gachas ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME hsr.gachas_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Name: achievement_categories; Type: TABLE; Schema: nte; Owner: julius
 --
 
 CREATE TABLE nte.achievement_categories (
@@ -395,10 +508,10 @@ CREATE TABLE nte.achievement_categories (
 );
 
 
-ALTER TABLE nte.achievement_categories OWNER TO root;
+ALTER TABLE nte.achievement_categories OWNER TO julius;
 
 --
--- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: nte; Owner: root
+-- Name: achievement_categories_id_seq; Type: SEQUENCE; Schema: nte; Owner: julius
 --
 
 ALTER TABLE nte.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -412,7 +525,7 @@ ALTER TABLE nte.achievement_categories ALTER COLUMN id ADD GENERATED ALWAYS AS I
 
 
 --
--- Name: achievement_category_texts; Type: TABLE; Schema: nte; Owner: root
+-- Name: achievement_category_texts; Type: TABLE; Schema: nte; Owner: julius
 --
 
 CREATE TABLE nte.achievement_category_texts (
@@ -423,10 +536,10 @@ CREATE TABLE nte.achievement_category_texts (
 );
 
 
-ALTER TABLE nte.achievement_category_texts OWNER TO root;
+ALTER TABLE nte.achievement_category_texts OWNER TO julius;
 
 --
--- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: nte; Owner: root
+-- Name: achievement_category_texts_id_seq; Type: SEQUENCE; Schema: nte; Owner: julius
 --
 
 ALTER TABLE nte.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -440,7 +553,7 @@ ALTER TABLE nte.achievement_category_texts ALTER COLUMN id ADD GENERATED ALWAYS 
 
 
 --
--- Name: achievement_texts; Type: TABLE; Schema: nte; Owner: root
+-- Name: achievement_texts; Type: TABLE; Schema: nte; Owner: julius
 --
 
 CREATE TABLE nte.achievement_texts (
@@ -452,10 +565,10 @@ CREATE TABLE nte.achievement_texts (
 );
 
 
-ALTER TABLE nte.achievement_texts OWNER TO root;
+ALTER TABLE nte.achievement_texts OWNER TO julius;
 
 --
--- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: nte; Owner: root
+-- Name: achievement_texts_id_seq; Type: SEQUENCE; Schema: nte; Owner: julius
 --
 
 ALTER TABLE nte.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -469,7 +582,7 @@ ALTER TABLE nte.achievement_texts ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTI
 
 
 --
--- Name: achievements; Type: TABLE; Schema: nte; Owner: root
+-- Name: achievements; Type: TABLE; Schema: nte; Owner: julius
 --
 
 CREATE TABLE nte.achievements (
@@ -493,10 +606,10 @@ CREATE TABLE nte.achievements (
 );
 
 
-ALTER TABLE nte.achievements OWNER TO root;
+ALTER TABLE nte.achievements OWNER TO julius;
 
 --
--- Name: achievements_id_seq; Type: SEQUENCE; Schema: nte; Owner: root
+-- Name: achievements_id_seq; Type: SEQUENCE; Schema: nte; Owner: julius
 --
 
 ALTER TABLE nte.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
@@ -510,7 +623,7 @@ ALTER TABLE nte.achievements ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY (
 
 
 --
--- Name: _sqlx_migrations; Type: TABLE; Schema: public; Owner: root
+-- Name: _sqlx_migrations; Type: TABLE; Schema: public; Owner: julius
 --
 
 CREATE TABLE public._sqlx_migrations (
@@ -523,10 +636,10 @@ CREATE TABLE public._sqlx_migrations (
 );
 
 
-ALTER TABLE public._sqlx_migrations OWNER TO root;
+ALTER TABLE public._sqlx_migrations OWNER TO julius;
 
 --
--- Name: admins admins_pkey; Type: CONSTRAINT; Schema: auth; Owner: root
+-- Name: admins admins_pkey; Type: CONSTRAINT; Schema: auth; Owner: julius
 --
 
 ALTER TABLE ONLY auth.admins
@@ -534,7 +647,7 @@ ALTER TABLE ONLY auth.admins
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: auth; Owner: root
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: auth; Owner: julius
 --
 
 ALTER TABLE ONLY auth.users
@@ -542,7 +655,7 @@ ALTER TABLE ONLY auth.users
 
 
 --
--- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_categories
@@ -550,7 +663,7 @@ ALTER TABLE ONLY gi.achievement_categories
 
 
 --
--- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_categories
@@ -558,7 +671,7 @@ ALTER TABLE ONLY gi.achievement_categories
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_category_texts
@@ -566,7 +679,7 @@ ALTER TABLE ONLY gi.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_texts
@@ -574,7 +687,7 @@ ALTER TABLE ONLY gi.achievement_texts
 
 
 --
--- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievements
@@ -582,7 +695,7 @@ ALTER TABLE ONLY gi.achievements
 
 
 --
--- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievements
@@ -590,7 +703,7 @@ ALTER TABLE ONLY gi.achievements
 
 
 --
--- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_categories
@@ -598,7 +711,7 @@ ALTER TABLE ONLY hsr.achievement_categories
 
 
 --
--- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_categories
@@ -606,7 +719,7 @@ ALTER TABLE ONLY hsr.achievement_categories
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_category_texts
@@ -614,7 +727,7 @@ ALTER TABLE ONLY hsr.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_texts
@@ -622,7 +735,7 @@ ALTER TABLE ONLY hsr.achievement_texts
 
 
 --
--- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievements
@@ -630,7 +743,7 @@ ALTER TABLE ONLY hsr.achievements
 
 
 --
--- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievements
@@ -638,7 +751,47 @@ ALTER TABLE ONLY hsr.achievements
 
 
 --
--- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: banner_characters banner_characters_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banner_characters
+    ADD CONSTRAINT banner_characters_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: banner_weapons banner_weapons_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banner_weapons
+    ADD CONSTRAINT banner_weapons_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: banners banners_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banners
+    ADD CONSTRAINT banners_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: gachas gachas_extern_id_key; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.gachas
+    ADD CONSTRAINT gachas_extern_id_key UNIQUE (extern_id);
+
+
+--
+-- Name: gachas gachas_pkey; Type: CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.gachas
+    ADD CONSTRAINT gachas_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: achievement_categories achievement_categories_extern_id_key; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_categories
@@ -646,7 +799,7 @@ ALTER TABLE ONLY nte.achievement_categories
 
 
 --
--- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievement_categories achievement_categories_pkey; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_categories
@@ -654,7 +807,7 @@ ALTER TABLE ONLY nte.achievement_categories
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievement_category_texts achievement_category_texts_pkey; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_category_texts
@@ -662,7 +815,7 @@ ALTER TABLE ONLY nte.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievement_texts achievement_texts_pkey; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_texts
@@ -670,7 +823,7 @@ ALTER TABLE ONLY nte.achievement_texts
 
 
 --
--- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievements achievements_extern_id_key; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievements
@@ -678,7 +831,7 @@ ALTER TABLE ONLY nte.achievements
 
 
 --
--- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievements achievements_pkey; Type: CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievements
@@ -686,7 +839,7 @@ ALTER TABLE ONLY nte.achievements
 
 
 --
--- Name: _sqlx_migrations _sqlx_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+-- Name: _sqlx_migrations _sqlx_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: julius
 --
 
 ALTER TABLE ONLY public._sqlx_migrations
@@ -694,105 +847,105 @@ ALTER TABLE ONLY public._sqlx_migrations
 
 
 --
--- Name: users_email_idx; Type: INDEX; Schema: auth; Owner: root
+-- Name: users_email_idx; Type: INDEX; Schema: auth; Owner: julius
 --
 
 CREATE INDEX users_email_idx ON auth.users USING btree (email) WHERE (email IS NOT NULL);
 
 
 --
--- Name: users_username_idx; Type: INDEX; Schema: auth; Owner: root
+-- Name: users_username_idx; Type: INDEX; Schema: auth; Owner: julius
 --
 
 CREATE INDEX users_username_idx ON auth.users USING btree (username);
 
 
 --
--- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: gi; Owner: root
+-- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: gi; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_category_texts_lang_category_idx ON gi.achievement_category_texts USING btree (lang, category);
 
 
 --
--- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: gi; Owner: root
+-- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: gi; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_texts_lang_achievement_idx ON gi.achievement_texts USING btree (lang, achievement);
 
 
 --
--- Name: achievements_category_idx; Type: INDEX; Schema: gi; Owner: root
+-- Name: achievements_category_idx; Type: INDEX; Schema: gi; Owner: julius
 --
 
 CREATE INDEX achievements_category_idx ON gi.achievements USING btree (category);
 
 
 --
--- Name: achievements_extern_id_idx; Type: INDEX; Schema: gi; Owner: root
+-- Name: achievements_extern_id_idx; Type: INDEX; Schema: gi; Owner: julius
 --
 
 CREATE INDEX achievements_extern_id_idx ON gi.achievements USING btree (extern_id);
 
 
 --
--- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: hsr; Owner: root
+-- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: hsr; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_category_texts_lang_category_idx ON hsr.achievement_category_texts USING btree (lang, category);
 
 
 --
--- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: hsr; Owner: root
+-- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: hsr; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_texts_lang_achievement_idx ON hsr.achievement_texts USING btree (lang, achievement);
 
 
 --
--- Name: achievements_category_idx; Type: INDEX; Schema: hsr; Owner: root
+-- Name: achievements_category_idx; Type: INDEX; Schema: hsr; Owner: julius
 --
 
 CREATE INDEX achievements_category_idx ON hsr.achievements USING btree (category);
 
 
 --
--- Name: achievements_extern_id_idx; Type: INDEX; Schema: hsr; Owner: root
+-- Name: achievements_extern_id_idx; Type: INDEX; Schema: hsr; Owner: julius
 --
 
 CREATE INDEX achievements_extern_id_idx ON hsr.achievements USING btree (extern_id);
 
 
 --
--- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: nte; Owner: root
+-- Name: achievement_category_texts_lang_category_idx; Type: INDEX; Schema: nte; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_category_texts_lang_category_idx ON nte.achievement_category_texts USING btree (lang, category);
 
 
 --
--- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: nte; Owner: root
+-- Name: achievement_texts_lang_achievement_idx; Type: INDEX; Schema: nte; Owner: julius
 --
 
 CREATE UNIQUE INDEX achievement_texts_lang_achievement_idx ON nte.achievement_texts USING btree (lang, achievement);
 
 
 --
--- Name: achievements_category_idx; Type: INDEX; Schema: nte; Owner: root
+-- Name: achievements_category_idx; Type: INDEX; Schema: nte; Owner: julius
 --
 
 CREATE INDEX achievements_category_idx ON nte.achievements USING btree (category);
 
 
 --
--- Name: achievements_extern_id_idx; Type: INDEX; Schema: nte; Owner: root
+-- Name: achievements_extern_id_idx; Type: INDEX; Schema: nte; Owner: julius
 --
 
 CREATE INDEX achievements_extern_id_idx ON nte.achievements USING btree (extern_id);
 
 
 --
--- Name: admins admins_id_fkey; Type: FK CONSTRAINT; Schema: auth; Owner: root
+-- Name: admins admins_id_fkey; Type: FK CONSTRAINT; Schema: auth; Owner: julius
 --
 
 ALTER TABLE ONLY auth.admins
@@ -800,7 +953,7 @@ ALTER TABLE ONLY auth.admins
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_category_texts
@@ -808,7 +961,7 @@ ALTER TABLE ONLY gi.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievement_texts
@@ -816,7 +969,7 @@ ALTER TABLE ONLY gi.achievement_texts
 
 
 --
--- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: root
+-- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: gi; Owner: julius
 --
 
 ALTER TABLE ONLY gi.achievements
@@ -824,7 +977,7 @@ ALTER TABLE ONLY gi.achievements
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_category_texts
@@ -832,7 +985,7 @@ ALTER TABLE ONLY hsr.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievement_texts
@@ -840,7 +993,7 @@ ALTER TABLE ONLY hsr.achievement_texts
 
 
 --
--- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: root
+-- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
 --
 
 ALTER TABLE ONLY hsr.achievements
@@ -848,7 +1001,31 @@ ALTER TABLE ONLY hsr.achievements
 
 
 --
--- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: root
+-- Name: banner_characters banner_characters_banner_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banner_characters
+    ADD CONSTRAINT banner_characters_banner_fkey FOREIGN KEY (banner) REFERENCES hsr.banners(id);
+
+
+--
+-- Name: banner_weapons banner_weapons_banner_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banner_weapons
+    ADD CONSTRAINT banner_weapons_banner_fkey FOREIGN KEY (banner) REFERENCES hsr.banners(id);
+
+
+--
+-- Name: banners banners_gacha_fkey; Type: FK CONSTRAINT; Schema: hsr; Owner: julius
+--
+
+ALTER TABLE ONLY hsr.banners
+    ADD CONSTRAINT banners_gacha_fkey FOREIGN KEY (gacha) REFERENCES hsr.gachas(id);
+
+
+--
+-- Name: achievement_category_texts achievement_category_texts_category_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_category_texts
@@ -856,7 +1033,7 @@ ALTER TABLE ONLY nte.achievement_category_texts
 
 
 --
--- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievement_texts achievement_texts_achievement_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievement_texts
@@ -864,7 +1041,7 @@ ALTER TABLE ONLY nte.achievement_texts
 
 
 --
--- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: root
+-- Name: achievements achievements_category_fkey; Type: FK CONSTRAINT; Schema: nte; Owner: julius
 --
 
 ALTER TABLE ONLY nte.achievements
@@ -875,5 +1052,5 @@ ALTER TABLE ONLY nte.achievements
 -- PostgreSQL database dump complete
 --
 
-\unrestrict IcUCouRg4hbAMJxT8hfDGESvNbm8O0TsgF4scJP8XptcOFGK1sLiG7OEAhCyhcA
+\unrestrict poWt5RcU4c0ekHjTsatuai3SUE6lqx1iN15cSZDPSQ3i56AP5EyMqI0qQ2NOtHv
 
